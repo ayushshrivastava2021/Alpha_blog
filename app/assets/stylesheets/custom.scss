@@ -1,0 +1,47 @@
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link{
+  color: white !important;
+}
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+    
+#home-container{
+  margin-top: 25px;
+}
+
+.jumbotron{
+
+    background-image: asset-url('jumbotron-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 475px;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  
+}
+
+/* Other Classes for Page Styling */
+
+body {
+  background-color: lightgrey;
+}

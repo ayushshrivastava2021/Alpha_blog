@@ -28,7 +28,11 @@
     background-size: cover;
     height: 475px;
 }
-
+#sticky-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 html,
 body {
   height: 100%;

@@ -10,9 +10,12 @@
   </head>
 
   <body class="d-flex flex-column">
+  
     <%= render 'layouts/shared/header' %>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div id = "page-content">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
     <%= render 'layouts/shared/footer' %>
   </body>
 </html>

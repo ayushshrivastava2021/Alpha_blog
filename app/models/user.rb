@@ -11,4 +11,6 @@ class User < ApplicationRecord
               uniqueness: {case_sensitive: false}, # always unique
               length:{ maximum: 25}, #email max length is 25
               format:{with: VALID_EMAIL_REGEX} # validate email in specify formate
+              
+    has_secure_password
 end

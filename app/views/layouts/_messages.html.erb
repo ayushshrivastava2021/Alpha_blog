@@ -1,8 +1,15 @@
 <% flash.each do |name, msg|%>
-<div class="alert alert-success alert-dismissible fade show shadow rounded" role="alert">
-    <%= msg %>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
- <% end %>
+  <div class="alert alert-success alert-dismissible fade show shadow rounded" role="alert" id="ayush">
+      <%= msg %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+<script>
+$(document).ready(function(){
+  setTimeout(function () {
+    $('#ayush').addClass('d-none');
+  }, 1000);
+});
+</script>

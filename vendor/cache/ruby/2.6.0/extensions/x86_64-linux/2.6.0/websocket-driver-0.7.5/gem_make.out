@@ -1,0 +1,15 @@
+current directory: /home/dev04/Desktop/Ayush/Rail_project/Alpha_blog/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/home/dev04/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/dev04/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20220208-15633-su12tg.rb extconf.rb
+creating Makefile
+
+current directory: /home/dev04/Desktop/Ayush/Rail_project/Alpha_blog/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/dev04/Desktop/Ayush/Rail_project/Alpha_blog/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/dev04/Desktop/Ayush/Rail_project/Alpha_blog/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -m 0755 websocket_mask.so ./.gem.20220208-15633-rlbs8y

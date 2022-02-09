@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
     before_action :select_article, only: [:show,:edit,:update,:destroy]
+    before_action :current_user, only: [:create]
     def show
         
     end
@@ -17,7 +18,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = Article.new(params.require(:article).permit(:title, :description))
+        @article = @current_user.articles.new(articles_params)
         if @article.save
             flash[:notice] = "Article created successfully"
             redirect_to @article

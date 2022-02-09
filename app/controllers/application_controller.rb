@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
     def logged_in?
 		!! current_user
 	end
+
+    def require_user
+        if !logged_in?
+            flash[:alert] = "first login then perform actions"
+            redirect_to login_path
+        end
+    end
 end

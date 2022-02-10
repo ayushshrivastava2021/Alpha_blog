@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     before_save {self.email = email.downcase} #used to convert email in downcase before save
-    has_many :articles # has_many is an association which user to specify user has many articles and its associate user table to  articles table
+    has_many :articles, dependent: :destroy # has_many is an association which user to specify user has many articles and its associate user table to  articles table
     validates :username, presence: true, # username always require 
                uniqueness: {case_sensitive: false}, # username always unique
                length:{minimum: 3, maximum: 25} # length of username is b/w 3-25

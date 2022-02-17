@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
-        flash[:notice]= "Welcome to Alphablog #{@user.username}, You are successfully signed up "
+        flash[:notice]= "Welcome to Alphablog #{@user.name}, You are successfully signed up "
         redirect_to articles_path
       else
         render 'new'
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-      params.require(:user).permit(:username,:email,:password,)
+      params.require(:user).permit(:name,:email,:password,)
     end
 
     def set_user

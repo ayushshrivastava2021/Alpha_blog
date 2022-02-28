@@ -2,9 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_user, only: [:edit, :update]
   before_action :require_same_user, only: [:edit, :update, :destroy]
-
-    def show
-      @articles = @user.articles
+  def show
+      @articles = @user.articles.paginate(page: params[:page], per_page: 5)
     end
 
     def index
@@ -19,6 +18,7 @@ class UsersController < ApplicationController
     def create
       @user = User.new(user_params)
       if @user.save
+        UserMailer.with(user: @user).welcome_email.deliver_now
         session[:user_id] = @user.id
         flash[:notice]= "Welcome to Alphablog #{@user.name}, You are successfully signed up "
         redirect_to articles_path
@@ -40,6 +40,10 @@ class UsersController < ApplicationController
 
     end
     def destroy
+      if current_user.admin
+        @user.destroy
+        redirect_to articles_path  
+      end
       @user.destroy
       session[:user_id] = nil
       flash[:notice] = "Your data are totally deleted"
@@ -59,8 +63,8 @@ class UsersController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @user 
-        flash[:alert]= "You only edit your own profile"
+      if current_user != @user
+        flash[:alert]= "You only editor delete your own profile"
         redirect_to @user
       end
     end
